@@ -1,50 +1,51 @@
 Running `(cd /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/; ANDROID_HOME=/Users/mac/Library/Android/sdk TMPDIR=/var/folders/nl/shjlh6ws1kvc56q4q83kw2mc0000gn/T/ PATH=/Users/mac/.gemini/antigravity-ide/bin:/Users/mac/.antigravity-ide/antigravity-ide/bin:/Users/mac/.antigravity-ide/antigravity-ide/bin:/Users/mac/.antigravity-ide/antigravity-ide/bin:/Users/mac/.local/bin:/Users/mac/.strix/bin:/Users/mac/.opencode/bin:/Users/mac/.antigravity-ide/antigravity-ide/bin:/usr/local/opt/openjdk@17/bin:/Users/mac/.fly/bin:/Users/mac/.antigravity/antigravity/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/Applications/Wireshark.app/Contents/MacOS:/Users/mac/Library/Android/sdk/platform-tools:/Users/mac/Library/Android/sdk/cmdline-tools/latest/bin:/Users/mac/Library/Android/sdk/emulator:/Users/mac/Library/Android/sdk/platform-tools:/Users/mac/Library/Android/sdk/emulator:/Users/mac/Library/Android/sdk/cmdline-tools/latest/bin:/usr/local/opt/fzf/bin HOME=/Users/mac /usr/local/share/flutter/bin/cache/dart-sdk/bin/dart --packages=/Users/mac/Documents/Riwaaj/.dart_tool/package_config.json /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/objective_c/5f31b8d621/hook.dill --config=/Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/objective_c/5f31b8d621/input.json )`.
-INFO: 2026-10-29 13:32:53.788482: Using compiler /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang from BuildInput.cCompiler.cc.
+INFO: 2026-10-29 13:42:44.336251: Using compiler /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang from BuildInput.cCompiler.cc.
 
-INFO: 2026-10-29 13:32:53.804106: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target x86_64-apple-darwin -mmacos-version-min=13 -c /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/src/include/dart_api_dl.c -fpic -gline-tables-only -I src -o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/include/dart_api_dl.c.o
+INFO: 2026-10-29 13:42:44.351628: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target x86_64-apple-darwin -mmacos-version-min=13 -c /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/src/include/dart_api_dl.c -fpic -gline-tables-only -I src -o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/include/dart_api_dl.c.o
 
-INFO: 2026-10-29 13:32:53.807876: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target x86_64-apple-darwin -mmacos-version-min=13 -c /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/src/objective_c.c -fpic -gline-tables-only -I src -o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c.c.o
+INFO: 2026-10-29 13:42:44.355375: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target x86_64-apple-darwin -mmacos-version-min=13 -c /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/src/objective_c.c -fpic -gline-tables-only -I src -o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c.c.o
 
-INFO: 2026-10-29 13:32:53.808369: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target x86_64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/src/input_stream_adapter.m -fpic -gline-tables-only -I src -o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/input_stream_adapter.m.o
+INFO: 2026-10-29 13:42:44.355886: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target x86_64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/src/input_stream_adapter.m -fpic -gline-tables-only -I src -o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/input_stream_adapter.m.o
 
-INFO: 2026-10-29 13:32:53.808685: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target x86_64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/src/objective_c.m -fpic -gline-tables-only -I src -o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c.m.o
+INFO: 2026-10-29 13:42:44.356217: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target x86_64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/src/objective_c.m -fpic -gline-tables-only -I src -o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c.m.o
 
-INFO: 2026-10-29 13:32:53.809341: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target x86_64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/src/ns_number.m -fpic -gline-tables-only -I src -o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/ns_number.m.o
+INFO: 2026-10-29 13:42:44.356836: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target x86_64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/src/ns_number.m -fpic -gline-tables-only -I src -o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/ns_number.m.o
 
-INFO: 2026-10-29 13:32:53.809653: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target x86_64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/src/protocol.m -fpic -gline-tables-only -I src -o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/protocol.m.o
+INFO: 2026-10-29 13:42:44.357148: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target x86_64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/src/protocol.m -fpic -gline-tables-only -I src -o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/protocol.m.o
 
-INFO: 2026-10-29 13:32:53.810061: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target x86_64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/src/objective_c_bindings_generated.m -fpic -gline-tables-only -I src -o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c_bindings_generated.m.o
+INFO: 2026-10-29 13:42:44.357527: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target x86_64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/mac/.pub-cache/hosted/pub.dev/objective_c-9.5.0/src/objective_c_bindings_generated.m -fpic -gline-tables-only -I src -o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c_bindings_generated.m.o
 
-INFO: 2026-10-29 13:32:53.937830: 
-INFO: 2026-10-29 13:32:53.937956: Generated /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/include/dart_api_dl.c.o
+INFO: 2026-10-29 13:42:44.569502: Generated /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c.c.o
 
-INFO: 2026-10-29 13:32:53.940211: 
-INFO: 2026-10-29 13:32:53.940268: 
-INFO: 2026-10-29 13:32:53.940303: Generated /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c.c.o
+INFO: 2026-10-29 13:42:44.570667: Generated /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/include/dart_api_dl.c.o
 
-INFO: 2026-10-29 13:32:53.971571: 
-INFO: 2026-10-29 13:32:53.971662: 
-INFO: 2026-10-29 13:32:53.971752: Generated /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/protocol.m.o
+INFO: 2026-10-29 13:42:44.614325: 
+INFO: 2026-10-29 13:42:44.614394: 
+INFO: 2026-10-29 13:42:44.614449: Generated /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/protocol.m.o
 
-INFO: 2026-10-29 13:32:53.976139: 
-INFO: 2026-10-29 13:32:53.976231: 
-INFO: 2026-10-29 13:32:53.976289: Generated /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/observer.m.o
+INFO: 2026-10-29 13:42:44.624302: 
+INFO: 2026-10-29 13:42:44.624391: 
+INFO: 2026-10-29 13:42:44.624427: Generated /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/observer.m.o
 
-INFO: 2026-10-29 13:32:54.670899: 
-INFO: 2026-10-29 13:32:54.670977: 
-INFO: 2026-10-29 13:32:54.671027: Generated /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/ns_number.m.o
+INFO: 2026-10-29 13:42:45.504280: 
+INFO: 2026-10-29 13:42:45.504353: 
+INFO: 2026-10-29 13:42:45.504384: Generated /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/ns_number.m.o
 
-INFO: 2026-10-29 13:32:54.695041: Generated /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/input_stream_adapter.m.o
+INFO: 2026-10-29 13:42:45.533021: 
+INFO: 2026-10-29 13:42:45.533112: 
+INFO: 2026-10-29 13:42:45.533166: Generated /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c.m.o
 
-shared/objective_c/build/5f31b8d621/obj/src/objective_c.m.o
+INFO: 2026-10-29 13:42:45.533595: 
+INFO: 2026-10-29 13:42:45.533651: 
+INFO: 2026-10-29 13:42:45.533698: Generated /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/input_stream_adapter.m.o
 
-INFO: 2026-10-29 13:32:54.814489: 
-INFO: 2026-10-29 13:32:54.814558: 
-INFO: 2026-10-29 13:32:54.814586: Generated /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c_bindings_generated.m.o
+INFO: 2026-10-29 13:42:45.674717: 
+INFO: 2026-10-29 13:42:45.674780: 
+INFO: 2026-10-29 13:42:45.674814: Generated /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c_bindings_generated.m.o
 
-INFO: 2026-10-29 13:32:54.815273: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -shared -Wl,-encryptable -undefined dynamic_lookup -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target x86_64-apple-darwin -mmacos-version-min=13 /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/include/dart_api_dl.c.o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c.c.o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/input_stream_adapter.m.o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c.m.o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/observer.m.o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/ns_number.m.o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/protocol.m.o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c_bindings_generated.m.o -o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/objective_c.dylib
+INFO: 2026-10-29 13:42:45.675514: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -shared -Wl,-encryptable -undefined dynamic_lookup -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target x86_64-apple-darwin -mmacos-version-min=13 /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/include/dart_api_dl.c.o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c.c.o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/input_stream_adapter.m.o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c.m.o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/observer.m.o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/ns_number.m.o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/protocol.m.o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/obj/src/objective_c_bindings_generated.m.o -o /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/objective_c.dylib
 
-INFO: 2026-10-29 13:32:54.896568: 
-INFO: 2026-10-29 13:32:54.896738: 
-INFO: 2026-10-29 13:32:54.896773: Generated /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/objective_c.dylib
+INFO: 2026-10-29 13:42:45.781510: 
+INFO: 2026-10-29 13:42:45.781711: 
+INFO: 2026-10-29 13:42:45.781748: Generated /Users/mac/Documents/Riwaaj/.dart_tool/hooks_runner/shared/objective_c/build/5f31b8d621/objective_c.dylib
 
