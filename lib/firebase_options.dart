@@ -2,8 +2,7 @@ import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
 
-/// Default [FirebaseOptions] for use with your Firebase apps.
-/// Generated with data from the user-provided google-services.json configuration.
+/// Default [FirebaseOptions] for use with your Firebase apps on both Android and Web.
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
@@ -15,18 +14,21 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       default:
-        return android;
+        return web;
     }
   }
 
+  /// Web Firebase configuration
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDo4L0XkezPDIf_cjZbmMoULpwdtZztkKs',
-    appId: '1:335532153657:web:740e73dafde702870d26e8',
+    apiKey: 'AIzaSyAmx5WBq3iKiZ1i96rna7H_WPl0ssPaEVE',
+    appId: '1:335532153657:web:e7458d0c60a38a040d26e8',
     messagingSenderId: '335532153657',
     projectId: 'todo-app-a9372',
+    authDomain: 'todo-app-a9372.firebaseapp.com',
     storageBucket: 'todo-app-a9372.firebasestorage.app',
   );
 
+  /// Android Firebase configuration (from google-services.json)
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDo4L0XkezPDIf_cjZbmMoULpwdtZztkKs',
     appId: '1:335532153657:android:740e73dafde702870d26e8',
@@ -35,6 +37,7 @@ class DefaultFirebaseOptions {
     storageBucket: 'todo-app-a9372.firebasestorage.app',
   );
 
+  /// iOS fallback configuration
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDo4L0XkezPDIf_cjZbmMoULpwdtZztkKs',
     appId: '1:335532153657:ios:740e73dafde702870d26e8',
