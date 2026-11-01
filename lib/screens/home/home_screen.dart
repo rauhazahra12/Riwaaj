@@ -92,7 +92,7 @@ class HomeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Wedding season edit',
+                      'Wedding season',
                       style: GoogleFonts.playfairDisplay(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,

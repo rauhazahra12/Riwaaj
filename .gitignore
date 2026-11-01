@@ -6,6 +6,8 @@
 .DS_Store
 .atom/
 .buildlog/
+.gradle-home/
+.gradle/
 .history
 .svn/
 migrate_working_dir/
@@ -26,6 +28,8 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
+.vscode/
+android/local.properties
 
 # Symbol processing related
 app.*.symbols

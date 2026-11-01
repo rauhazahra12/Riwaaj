@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
 import 'package:provider/provider.dart';
 import '../models/outfit_model.dart';
 import '../providers/outfit_provider.dart';
@@ -35,7 +36,19 @@ class OutfitCard extends StatelessWidget {
               child: Stack(
                 fit: StackFit.expand,
                 children: [
-                  DressArt(index: outfit.artIndex),
+                  if (outfit.imageUrl != null)
+                    Image.network(outfit.imageUrl!, fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) => DressArt(index: outfit.artIndex))
+                  else if (outfit.imageData != null)
+                    Image.memory(base64Decode(outfit.imageData!), fit: BoxFit.cover)
+                  else if (outfit.assetPath != null)
+                    Image.asset(
+                      outfit.assetPath!,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) => DressArt(index: outfit.artIndex),
+                    )
+                  else
+                    DressArt(index: outfit.artIndex),
                   if (outfit.isPromoted)
                     Positioned(
                       left: 8,

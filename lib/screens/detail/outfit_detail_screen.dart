@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../core/theme/app_colors.dart';
@@ -54,7 +55,19 @@ class _OutfitDetailScreenState extends State<OutfitDetailScreen> {
               child: Stack(
                 fit: StackFit.expand,
                 children: [
-                  DressArt(index: widget.outfit.artIndex),
+                  if (widget.outfit.imageUrl != null)
+                    Image.network(widget.outfit.imageUrl!, fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) => DressArt(index: widget.outfit.artIndex))
+                  else if (widget.outfit.imageData != null)
+                    Image.memory(base64Decode(widget.outfit.imageData!), fit: BoxFit.cover)
+                  else if (widget.outfit.assetPath != null)
+                    Image.asset(
+                      widget.outfit.assetPath!,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) => DressArt(index: widget.outfit.artIndex),
+                    )
+                  else
+                    DressArt(index: widget.outfit.artIndex),
                   Positioned(
                     top: 14,
                     left: 16,

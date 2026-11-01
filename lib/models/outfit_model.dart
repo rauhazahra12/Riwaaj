@@ -15,6 +15,8 @@ class OutfitModel {
   final bool isOwnerVerified;
   final int artIndex;
   final String? imageUrl;
+  final String? imageData;
+  final String? assetPath;
   final String availabilityRange;
   final bool isPromoted;
   final int bookingCount;
@@ -37,6 +39,8 @@ class OutfitModel {
     this.isOwnerVerified = true,
     this.artIndex = 0,
     this.imageUrl,
+    this.imageData,
+    this.assetPath,
     this.availabilityRange = '12–20 December',
     this.isPromoted = false,
     this.bookingCount = 0,
@@ -60,6 +64,8 @@ class OutfitModel {
     bool? isOwnerVerified,
     int? artIndex,
     String? imageUrl,
+    String? imageData,
+    String? assetPath,
     String? availabilityRange,
     bool? isPromoted,
     int? bookingCount,
@@ -82,6 +88,8 @@ class OutfitModel {
       isOwnerVerified: isOwnerVerified ?? this.isOwnerVerified,
       artIndex: artIndex ?? this.artIndex,
       imageUrl: imageUrl ?? this.imageUrl,
+      imageData: imageData ?? this.imageData,
+      assetPath: assetPath ?? this.assetPath,
       availabilityRange: availabilityRange ?? this.availabilityRange,
       isPromoted: isPromoted ?? this.isPromoted,
       bookingCount: bookingCount ?? this.bookingCount,
@@ -107,6 +115,8 @@ class OutfitModel {
       'isOwnerVerified': isOwnerVerified,
       'artIndex': artIndex,
       'imageUrl': imageUrl,
+      'imageData': imageData,
+      'assetPath': assetPath,
       'availabilityRange': availabilityRange,
       'isPromoted': isPromoted,
       'bookingCount': bookingCount,
@@ -135,6 +145,8 @@ class OutfitModel {
       isOwnerVerified: map['isOwnerVerified'] ?? false,
       artIndex: (map['artIndex'] as num?)?.toInt() ?? 0,
       imageUrl: map['imageUrl'],
+      imageData: map['imageData'],
+      assetPath: map['assetPath'],
       availabilityRange: map['availabilityRange'] ?? '',
       isPromoted: map['isPromoted'] ?? false,
       bookingCount: (map['bookingCount'] as num?)?.toInt() ?? 0,

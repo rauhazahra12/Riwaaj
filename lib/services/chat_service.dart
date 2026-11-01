@@ -216,9 +216,18 @@ class MockChatService implements IChatService {
       otherUserName: ownerName,
       outfitTitle: outfitTitle,
       outfitPricePerDay: outfitPrice,
-      lastMessage: 'Conversation started',
+      lastMessage: 'Hi! I’m interested in this outfit.',
       lastMessageTime: DateTime.now(),
-      messages: [],
+      messages: [
+        ChatMessage(
+          id: _uuid.v4(),
+          senderId: 'usr_ayesha_01',
+          senderName: 'Ayesha Khan',
+          text: 'Hi! I’m interested in this outfit.',
+          timestamp: DateTime.now(),
+          isFromCurrentUser: true,
+        ),
+      ],
     );
     _conversations.insert(0, newConv);
     _controller.add(List.unmodifiable(_conversations));

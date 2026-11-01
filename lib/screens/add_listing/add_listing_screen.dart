@@ -1,6 +1,10 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
+
 import '../../core/constants/app_constants.dart';
 import '../../core/theme/app_colors.dart';
 import '../../models/outfit_model.dart';
@@ -10,10 +14,7 @@ import '../../widgets/custom_buttons.dart';
 import '../../widgets/custom_text_field.dart';
 
 class AddListingScreen extends StatefulWidget {
-  const AddListingScreen({
-    super.key,
-    required this.onPublished,
-  });
+  const AddListingScreen({super.key, required this.onPublished});
 
   final VoidCallback onPublished;
 
@@ -24,9 +25,13 @@ class AddListingScreen extends StatefulWidget {
 class _AddListingScreenState extends State<AddListingScreen> {
   int _currentStep = 0;
   final Set<int> _selectedPhotoSlots = {0, 1};
+  final ImagePicker _picker = ImagePicker();
+  final Map<int, Uint8List> _pickedImages = {};
 
   // Form Fields
-  final _titleController = TextEditingController(text: 'Crimson Velvet Bridal Lehenga');
+  final _titleController = TextEditingController(
+    text: 'Crimson Velvet Bridal Lehenga',
+  );
   final _designerController = TextEditingController(text: 'Sania Maskatiya');
   final _descController = TextEditingController(
     text: 'Opulent crimson velvet lehenga with zardozi borders and hand-woven organza veil.',
@@ -73,6 +78,7 @@ class _AddListingScreenState extends State<AddListingScreen> {
       ownerRating: 5.0,
       isOwnerVerified: true,
       artIndex: 0,
+      imageUrl: null,
       availabilityRange: _availabilityController.text.trim(),
       isPromoted: true,
       bookingCount: 0,
@@ -88,6 +94,14 @@ class _AddListingScreenState extends State<AddListingScreen> {
       );
       setState(() => _currentStep = 0);
       widget.onPublished();
+    } else if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            outfitProvider.errorMessage ?? 'Could not publish listing.',
+          ),
+        ),
+      );
     }
   }
 
@@ -114,11 +128,23 @@ class _AddListingScreenState extends State<AddListingScreen> {
               // Step Bar
               Row(
                 children: [
-                  _stepIndicator('1. Photos', _currentStep >= 0, _currentStep == 0),
+                  _stepIndicator(
+                    '1. Photos',
+                    _currentStep >= 0,
+                    _currentStep == 0,
+                  ),
                   const SizedBox(width: 8),
-                  _stepIndicator('2. Details', _currentStep >= 1, _currentStep == 1),
+                  _stepIndicator(
+                    '2. Details',
+                    _currentStep >= 1,
+                    _currentStep == 1,
+                  ),
                   const SizedBox(width: 8),
-                  _stepIndicator('3. Terms', _currentStep >= 2, _currentStep == 2),
+                  _stepIndicator(
+                    '3. Terms',
+                    _currentStep >= 2,
+                    _currentStep == 2,
+                  ),
                 ],
               ),
               const SizedBox(height: 18),
@@ -194,8 +220,8 @@ class _AddListingScreenState extends State<AddListingScreen> {
               color: isCurrent
                   ? AppColors.red
                   : isDone
-                      ? AppColors.green
-                      : AppColors.border,
+                  ? AppColors.green
+                  : AppColors.border,
               borderRadius: BorderRadius.circular(4),
             ),
           ),
@@ -209,6 +235,130 @@ class _AddListingScreenState extends State<AddListingScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Future<void> _pickImage(int slotIndex, ImageSource source) async {
+    try {
+      final XFile? file = await _picker.pickImage(
+        source: source,
+        maxWidth: 1600,
+        maxHeight: 1600,
+        imageQuality: 85,
+      );
+      if (file != null) {
+        final bytes = await file.readAsBytes();
+        setState(() {
+          _pickedImages[slotIndex] = bytes;
+          _selectedPhotoSlots.add(slotIndex);
+        });
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text('Could not access image: $e')));
+      }
+    }
+  }
+
+  void _showSourcePicker(int slotIndex) {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.white,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      ),
+      builder: (ctx) => SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                width: 40,
+                height: 4,
+                decoration: BoxDecoration(
+                  color: AppColors.border,
+                  borderRadius: BorderRadius.circular(4),
+                ),
+              ),
+              const SizedBox(height: 16),
+              const Text(
+                'Add Outfit Photo',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.ink,
+                ),
+              ),
+              const SizedBox(height: 6),
+              const Text(
+                'Capture live or pick from your saved garment photos',
+                style: TextStyle(fontSize: 12, color: AppColors.muted),
+              ),
+              const SizedBox(height: 16),
+              ListTile(
+                leading: const CircleAvatar(
+                  backgroundColor: AppColors.blush,
+                  child: Icon(Icons.camera_alt_outlined, color: AppColors.red),
+                ),
+                title: const Text(
+                  'Take photo with Camera',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                ),
+                subtitle: const Text('Use your device camera for a fresh shot'),
+                onTap: () {
+                  Navigator.pop(ctx);
+                  _pickImage(slotIndex, ImageSource.camera);
+                },
+              ),
+              ListTile(
+                leading: const CircleAvatar(
+                  backgroundColor: AppColors.sage,
+                  child: Icon(
+                    Icons.photo_library_outlined,
+                    color: AppColors.green,
+                  ),
+                ),
+                title: const Text(
+                  'Upload from Gallery',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                ),
+                subtitle: const Text('Choose from your device library'),
+                onTap: () {
+                  Navigator.pop(ctx);
+                  _pickImage(slotIndex, ImageSource.gallery);
+                },
+              ),
+              if (_pickedImages.containsKey(slotIndex)) ...[
+                const Divider(color: AppColors.border),
+                ListTile(
+                  leading: const CircleAvatar(
+                    backgroundColor: Color(0xfffde8e8),
+                    child: Icon(Icons.delete_outline, color: AppColors.red),
+                  ),
+                  title: const Text(
+                    'Remove this photo',
+                    style: TextStyle(
+                      color: AppColors.red,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.pop(ctx);
+                    setState(() {
+                      _pickedImages.remove(slotIndex);
+                      _selectedPhotoSlots.remove(slotIndex);
+                    });
+                  },
+                ),
+              ],
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -230,19 +380,14 @@ class _AddListingScreenState extends State<AddListingScreen> {
           mainAxisSpacing: 10,
           childAspectRatio: 0.95,
           children: List.generate(4, (i) {
+            final hasImage = _pickedImages.containsKey(i);
             final isAdded = _selectedPhotoSlots.contains(i);
+
             return InkWell(
-              onTap: () {
-                setState(() {
-                  if (isAdded) {
-                    _selectedPhotoSlots.remove(i);
-                  } else {
-                    _selectedPhotoSlots.add(i);
-                  }
-                });
-              },
+              onTap: () => _showSourcePicker(i),
               borderRadius: BorderRadius.circular(20),
               child: Container(
+                clipBehavior: Clip.antiAlias,
                 decoration: BoxDecoration(
                   color: isAdded ? AppColors.blush : Colors.white,
                   borderRadius: BorderRadius.circular(20),
@@ -251,25 +396,63 @@ class _AddListingScreenState extends State<AddListingScreen> {
                     width: isAdded ? 1.5 : 1,
                   ),
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      isAdded ? Icons.check_circle : Icons.add_a_photo_outlined,
-                      color: isAdded ? AppColors.red : AppColors.muted,
-                      size: 32,
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      isAdded ? 'Angle added ✓' : (i == 0 ? 'Main Photo' : 'Add Photo'),
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        color: isAdded ? AppColors.red : AppColors.muted,
+                child: hasImage
+                    ? Stack(
+                        fit: StackFit.expand,
+                        children: [
+                          Image.memory(_pickedImages[i]!, fit: BoxFit.cover),
+                          Positioned(
+                            top: 8,
+                            right: 8,
+                            child: CircleAvatar(
+                              radius: 14,
+                              backgroundColor: Colors.white,
+                              child: IconButton(
+                                padding: EdgeInsets.zero,
+                                icon: const Icon(
+                                  Icons.edit,
+                                  size: 14,
+                                  color: AppColors.ink,
+                                ),
+                                onPressed: () => _showSourcePicker(i),
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
+                    : Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            isAdded
+                                ? Icons.check_circle
+                                : Icons.add_a_photo_outlined,
+                            color: isAdded ? AppColors.red : AppColors.muted,
+                            size: 32,
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            hasImage
+                                ? 'Photo loaded ✓'
+                                : (isAdded
+                                      ? 'Angle added ✓'
+                                      : (i == 0 ? 'Main Photo' : 'Add Photo')),
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                              color: isAdded ? AppColors.red : AppColors.muted,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          const Text(
+                            'Camera / Gallery',
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: AppColors.muted,
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                  ],
-                ),
               ),
             );
           }),

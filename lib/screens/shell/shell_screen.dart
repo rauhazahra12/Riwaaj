@@ -121,7 +121,10 @@ class _ShellScreenState extends State<ShellScreen> {
                 outfit: activeOutfit,
                 onBack: () => _navigateTo('home'),
                 onBook: _openBooking,
-                onChat: () => _navigateTo('chat'),
+                onChat: () {
+                  final conversation = context.read<ChatProvider>().activeConversation;
+                  if (conversation != null) _openChatRoom(conversation);
+                },
               )
             : HomeScreen(
                 onSearchTap: () => _switchTab(1),
@@ -148,7 +151,8 @@ class _ShellScreenState extends State<ShellScreen> {
         );
         break;
       case 'chat':
-        final conv = _activeConversation ??
+        final activeChat = context.watch<ChatProvider>().activeConversation;
+        final conv = activeChat ?? _activeConversation ??
             (context.watch<ChatProvider>().conversations.isNotEmpty
                 ? context.watch<ChatProvider>().conversations.first
                 : null);

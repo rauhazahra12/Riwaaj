@@ -55,8 +55,9 @@ class PrimaryButton extends StatelessWidget {
                     style: const TextStyle(
                       fontFamily: 'Arial',
                       fontWeight: FontWeight.bold,
-                      fontSize: 14,
-                      letterSpacing: 0.2,
+                    fontSize: 11,
+                    letterSpacing: 0,
+                    overflow: TextOverflow.ellipsis,
                     ),
                   ),
                 ],
@@ -107,7 +108,8 @@ class SecondaryOutlineButton extends StatelessWidget {
               style: const TextStyle(
                 fontFamily: 'Arial',
                 fontWeight: FontWeight.bold,
-                fontSize: 14,
+                fontSize: 11,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],
